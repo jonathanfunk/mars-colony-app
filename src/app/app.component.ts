@@ -7,5 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Mars Colony';
-  description = 'This is a Mars Colony App. Yahoo.';
 }
