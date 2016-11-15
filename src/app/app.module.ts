@@ -4,17 +4,38 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { RegisterComponent } from './register/register.component';
+import { EncountersComponent } from './encounters/encounters.component';
+import { ReportComponent } from './report/report.component';
+import { RouterModule, Routes } from '@angular/router';
+import { NotFoundComponent } from './not-found/not-found.component';
+//Step 2: After components are created, paste this in here
+
+const appRoutes: Routes = [
+  { path: '', component: WelcomeComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'encounters', component: EncountersComponent },
+  { path: 'report', component: ReportComponent },
+  { path: '**', component: NotFoundComponent }
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WelcomeComponent,
+    RegisterComponent,
+    EncountersComponent,
+    ReportComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(appRoutes)//Add this line
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

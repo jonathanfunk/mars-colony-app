@@ -1,4 +1,6 @@
-class Encounter{
+//Making model classes is 1st step
+
+export class Encounter {//Found in encounters component
   constructor(
     public id: number,
     public date: string,
@@ -8,7 +10,16 @@ class Encounter{
   ){}
 }
 
-class Colonist{
+export class Job {//Linked to Colonist Class
+  constructor(
+    public name: string,
+    public id: number,
+    public description: string
+  ){}
+}
+
+
+export class Colonist {
   constructor(
     public name: string,
     public job: Job,
@@ -17,15 +28,7 @@ class Colonist{
   ){}
 }
 
-class Job{
-  constructor(
-    public name: string,
-    public id: number,
-    public description: string
-  ){}
-}
-
-class Alien{
+export class Alien {
   constructor(
     public type: string,
     public submitted_by: number,
