@@ -2,19 +2,14 @@
   <h1>Register</h1>
   <form>
     <fieldset>
-      <textarea name="name"></textarea>
-      <textarea name="age"></textarea>
+      <label><input type="text" placeholder="Name"[(ngModel)]="colonist.name" name="name"></label>
+      <label><input type="number" placeholder="Age" [(ngModel)]="colonist.age" name="age"></label>
       <select name="select">
         <option value="1" selected>Select occupation</option>
-        <option value="2">Dust farmer</option>
-        <option value="3">Alien hunter</option>
-        <option value="4">Battery Technician</option>
-        <option value="5">Yoga Teacher</option>
-        <option value="6">Front-end Developer</option>
       </select>
     </fieldset>
     <fieldset>
-      <button type="button" name="button">Check in</button>
+      <button type="button" name="Check In">Check in</button>
     </fieldset>
   </form>
 </section>
