@@ -1,13 +1,13 @@
 .register {
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   padding: 2rem;
 }
 form {
-  height: 90vh;
   flex-wrap: wrap;
   display: flex;
 }
+
 
 fieldset {
   width: 100%;
@@ -27,30 +27,45 @@ input {
   margin-bottom: 2rem;
 }
 
-input[placeholder] {
-   color: white;
-   font-size: 1rem;
+ .ng-touched {
+  color: white;
 }
 
 *::-webkit-input-placeholder {
-    color: white;
+    color: red;
 }
 *:-moz-placeholder {
     /* FF 4-18 */
-    color: white;
+    color: red;
 }
 *::-moz-placeholder {
     /* FF 19+ */
-    color: white;
+    color: red;
 }
 *:-ms-input-placeholder {
     /* IE 10+ */
-    color: white;
+    color: red;
+}
+
+ .ng-touched *::-webkit-input-placeholder {
+    color: red;
+}
+ .ng-touched *:-moz-placeholder {
+    /* FF 4-18 */
+    color: red;
+}
+ .ng-touched *::-moz-placeholder {
+    /* FF 19+ */
+    color: red;
+}
+ .ng-touched *:-ms-input-placeholder {
+    /* IE 10+ */
+    color: red;
 }
 
 select {
   font-size: 1rem;
-  color: white;
+  color: red;
   width: 100%;
   background-color: transparent;
   -webkit-appearance: none;

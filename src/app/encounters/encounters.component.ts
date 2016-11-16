@@ -1,13 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import  { Encounter } from '../models';//Import classes from models folder;
+import  EncountersService from '../services/encounter.service';//This calls from service
 
 @Component({
   selector: 'app-encounters',
   templateUrl: './encounters.component.html',
-  styleUrls: ['./encounters.component.css']
+  styleUrls: ['./encounters.component.css'],
+  providers: [EncountersService] //This injects from service to be used below
 })
 export class EncountersComponent implements OnInit {
 
-  constructor() { }
+  marsEncounters: Encounter[];
+
+  constructor(encounterService : EncountersService) {
+    encounterService.getEncounters().subscribe((encounters) => {//Subscribe is an asyncronous method. Loop is done in service.
+      this.marsEncounters = encounters;
+    }, (err) => {
+      console.log(err);
+    });
+  }
 
   ngOnInit() {
   }

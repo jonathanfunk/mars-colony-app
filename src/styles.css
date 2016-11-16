@@ -58,7 +58,11 @@ body {
   font: 18px 'Roboto', sans-serif;
 }
 
-h1 {
+h1, h2 {
   font-size: 2rem;
-  text-align: center;
+}
+
+header {
+	height: 10vh;
+	text-align: center;
 }

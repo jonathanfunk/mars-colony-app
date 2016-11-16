@@ -1,5 +1,12 @@
-<section class="encounters">
+<header>
   <h1>Recent Encounters</h1>
   <p>See an Alien? Report it!</p>
-  <button type="button" name="report"></button>
+</header>
+<section class="encounters">
+  <ul>
+    <li *ngFor="let encounter of marsEncounters">{{encounter.date}} - {{encounter.atype}}<br/>{{encounter.action}}</li>
+  </ul>
+</section>
+<section class="report-link">
+  <h2><a routerLink="/report" routerLinkActive="active">Report Encounter</a></h2>
 </section>

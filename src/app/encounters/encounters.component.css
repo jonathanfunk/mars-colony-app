@@ -1,0 +1,28 @@
+header {
+  color: black;
+  background-color: white;
+}
+
+.encounters {
+  height: 70vh;
+  color: black;
+  padding: 1rem;
+  background-color: white;
+  overflow: scroll;
+}
+
+li {
+  margin-bottom: 1rem;
+}
+
+.report-link {
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}

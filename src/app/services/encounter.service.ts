@@ -11,7 +11,7 @@ export default class EncountersService {
 
   constructor(private http: Http) { }
 
-  getColonists(): Observable<Encounter[]> {
+  getEncounters(): Observable<Encounter[]> {
     return this.http.get(this.ENCOUNTERS_JSON)
                     .map((res: Response) => res.json().encounters);
   }

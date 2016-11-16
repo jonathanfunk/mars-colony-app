@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(jobService: JobsService) {
     this.colonist = new NewColonist(null, null, this.NO_JOB_SELECTED) //Initial value is zero until user types in form
-    jobService.getJobs().subscribe((jobs) => {
+    jobService.getJobs().subscribe((jobs) => {//Subscribe is an asyncronous method. Loop is done in service.
       this.marsJobs = jobs;
     }, (err) => {
       console.log(err);
@@ -30,10 +30,19 @@ export class RegisterComponent implements OnInit {
     }, 2000);
 
     console.log("I'm on time!");
+
+
+  }
+
+  onSubmit(event, registerForm){
+    event.preventDefault();
+    console.log(registerForm.form.controls.name.invalid);
   }
 
   get jobSelected (){
     return this.colonist.job_id === this.NO_JOB_SELECTED;
   }
+
+
 
 }
