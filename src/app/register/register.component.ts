@@ -25,6 +25,11 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit() {
+    setTimeout(() => {
+      console.log("I'm late!");
+    }, 2000);
+
+    console.log("I'm on time!");
   }
 
   get jobSelected (){
