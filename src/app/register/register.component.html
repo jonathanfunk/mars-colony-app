@@ -1,15 +1,16 @@
 <section class="register">
-  <h1>Register</h1>
+  <h1>{{colonist.name}} - {{colonist.age}} - {{colonist.job_id}}</h1>
   <form>
     <fieldset>
       <label><input type="text" placeholder="Name"[(ngModel)]="colonist.name" name="name"></label>
       <label><input type="number" placeholder="Age" [(ngModel)]="colonist.age" name="age"></label>
-      <select name="select">
-        <option value="1" selected>Select occupation</option>
+      <select [(ngModel)]="colonist.job_id" name="job_id">
+        <option [value]="NO_JOB_SELECTED">Select a Job</option>
+        <option *ngFor="let job of marsJobs" [value]="job.id">{{job.name}}</option>
       </select>
     </fieldset>
     <fieldset>
-      <button type="button" name="Check In">Check in</button>
+      <button [disabled]="!jobSelected" type="button" name="Check In">Check in</button>
     </fieldset>
   </form>
 </section>

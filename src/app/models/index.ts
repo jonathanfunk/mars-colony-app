@@ -19,13 +19,19 @@ export class Job {//Linked to Colonist Class
 }
 
 
-export class Colonist {
+export class NewColonist {
   constructor(
     public name: string,
-    public job: Job,
-    public id: number,
-    public age: number
+    public age: number,
+    public job_id: string
   ){}
+}
+
+interface Colonist {
+  name: string;
+  id: number;
+  age: number;
+  job: Job;
 }
 
 export class Alien {
