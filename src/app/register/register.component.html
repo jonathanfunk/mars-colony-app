@@ -2,11 +2,11 @@
   <h1>Register</h1>
 </header>
 <section class="register">
-  <form [formGroup]="registerForm" (ngSubmit)="onSubmit($event)">
+  <form [formGroup]="registerForm" class="register-form" (ngSubmit)="onSubmit($event)">
     <fieldset>
-      <label><input type="text"  placeholder="Name" formControl="name" /></label>
-      <label><input type="number" placeholder="Age" formControl="age" /></label>
-      <select formControl="job_id">
+      <label><input type="text" placeholder="Enter name" formControlName="name" /></label>
+      <label><input type="number" placeholder="Age" formControlName="age" /></label>
+      <select formControlName="job_id">
         <option [value]="NO_JOB_SELECTED">Select a Job</option>
         <option *ngFor="let job of marsJobs" [value]="job.id">{{job.name}}</option>
       </select>
