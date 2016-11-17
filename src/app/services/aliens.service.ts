@@ -11,7 +11,7 @@ export default class AliensService {
 
   constructor(private http: Http) { }
 
-  getColonists(): Observable<Alien[]> {
+  getAliens(): Observable<Alien[]> {
     return this.http.get(this.ALIENS_JSON)
                     .map((res: Response) => res.json().aliens);
   }

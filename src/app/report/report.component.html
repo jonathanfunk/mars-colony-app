@@ -3,16 +3,16 @@
   <p>Safety on Mars is your responsibility</p>
 </header>
 <section class="report">
-  <!--<form #registerForm="ngForm" (ngSubmit)="onSubmit($event, registerForm)">
+  <form [formGroup]="reportForm" class="report-form" (ngSubmit)="onSubmit($event)">
     <fieldset>
-      <select [(ngModel)]="colonist.job_id" name="job_id" >
-        <option [value]="NO_JOB_SELECTED">Select alien type</option>
-        <option *ngFor="let job of marsJobs" [value]="job.id">{{job.name}}</option>
+      <select formControlName="alien_id">
+        <option [value]="NO_ALIEN_SELECTED">Select alien type</option>
+        <option *ngFor="let alien of marsAliens" [value]="alien.id">{{alien.type}}</option>
       </select>
-      <textarea placeholder="Action taken"></textarea>
+      <textarea placeholder="Action taken" formControlName="action"></textarea>
     </fieldset>
     <fieldset>
       <button>Check in</button>
     </fieldset>
-  </form>-->
+  </form>
 </section>

@@ -9,6 +9,7 @@ import JobsService from '../services/jobs.service';
   styleUrls: ['./register.component.css'],
   providers: [JobsService]
 })
+
 export class RegisterComponent implements OnInit {
 
   colonist: NewColonist;
