@@ -1,48 +1,60 @@
 import { Component, OnInit } from '@angular/core';
-import  { NewColonist, Job } from '../models';//Import classes from models folder;
-import  JobsService from '../services/jobs.service';//This calls from service
+import { FormGroup, FormControl, FormBuilder, Validators, ValidatorFn, AbstractControl  } from '@angular/forms';
+import { NewColonist, Job } from '../models';
+import JobsService from '../services/jobs.service';
+
+
+
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css'],
-  providers: [JobsService] //This injects from service to be used below
+ selector: 'app-register',
+ templateUrl: './register.component.html',
+ styleUrls: ['./register.component.css'],
+ providers: [JobsService]
 })
 export class RegisterComponent implements OnInit {
 
-  colonist: NewColonist;
-  marsJobs: Job[];
+ marsJobs: Job[];
+ registerForm: FormGroup;
 
-  NO_JOB_SELECTED = '(none)';
+ NO_JOB_SELECTED = '(none)';
 
-  constructor(jobService: JobsService) {
-    this.colonist = new NewColonist(null, null, this.NO_JOB_SELECTED) //Initial value is zero until user types in form
-    jobService.getJobs().subscribe((jobs) => {//Subscribe is an asyncronous method. Loop is done in service.
-      this.marsJobs = jobs;
-    }, (err) => {
-      console.log(err);
-    });
-  }
+ constructor(public jobService: JobsService,
+             /* private formBuilder: FormBuilder */) {
 
-  ngOnInit() {
-    setTimeout(() => {
-      console.log("I'm late!");
-    }, 2000);
+     jobService.getJobs().subscribe((jobs) => {
+       this.marsJobs = jobs;
+     }, (err) => {
+       console.log(err);
+     });
 
-    console.log("I'm on time!");
+ }
 
+ cantBe(value: string): ValidatorFn {
+   return (control: AbstractControl): {[key: string]: any} => {
+     return control.value === value ? {'cant be value': { value }} : null;
+   };
+ }
 
-  }
+ ngOnInit() {
 
-  onSubmit(event, registerForm){
-    event.preventDefault();
-    console.log(registerForm.form.controls.name.invalid);
-  }
+   this.registerForm = new FormGroup({
+     name: new FormControl('', [Validators.required, Validators.maxLength(100)]),
+     age: new FormControl('', [Validators.required, Validators.minLength(1)]),
+     job_id: new FormControl(this.NO_JOB_SELECTED, [this.cantBe(this.NO_JOB_SELECTED)])
+   });
 
-  get jobSelected (){
-    return this.colonist.job_id === this.NO_JOB_SELECTED;
-  }
+ }
 
-
-
+   onSubmit(event) {
+     event.preventDefault();
+     if(this.registerForm.invalid){
+       console.log("Not working!")
+     } else {
+       const name = this.registerForm.get('name').value;
+       const age = this.registerForm.get('age').value;
+       const job_id = this.registerForm.get('job_id').value;
+       console.log("Okay, let's register this new colonist:", new NewColonist(name, age, job_id));
+     }
+   }
 }

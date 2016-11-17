@@ -51,7 +51,7 @@ table {
 	box-sizing: border-box;
 }
 
-/* You can add global styles to this file, and also import other style files */
+/* Elements & Tags */
 body {
   background-color: black;
   color: white;
@@ -65,4 +65,94 @@ h1, h2 {
 header {
 	height: 10vh;
 	text-align: center;
+}
+
+/* Forms */
+
+form {
+  flex-wrap: wrap;
+  display: flex;
+}
+
+fieldset {
+  width: 100%;
+  height: 45vh;
+  display: flex;
+}
+
+input {
+  font-size: 1rem;
+  color: red;
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid white;
+  padding: .5rem 0;
+  margin-bottom: 2rem;
+}
+
+ .ng-touched {
+  color: white;
+}
+
+*::-webkit-input-placeholder {
+    color: red;
+}
+*:-moz-placeholder {
+    /* FF 4-18 */
+    color: red;
+}
+*::-moz-placeholder {
+    /* FF 19+ */
+    color: red;
+}
+*:-ms-input-placeholder {
+    /* IE 10+ */
+    color: red;
+}
+
+ .ng-touched *::-webkit-input-placeholder {
+    color: red;
+}
+ .ng-touched *:-moz-placeholder {
+    /* FF 4-18 */
+    color: red;
+}
+ .ng-touched *::-moz-placeholder {
+    /* FF 19+ */
+    color: red;
+}
+ .ng-touched *:-ms-input-placeholder {
+    /* IE 10+ */
+    color: red;
+}
+
+select {
+  font-size: 1rem;
+  color: red;
+  width: 100%;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  border: 0;
+  padding-bottom: .5rem;
+	margin-bottom: 1rem;
+  border-bottom: 1px solid white;
+}
+
+textarea {
+	width: 100%;
+	height: 200px;
+	padding: 1rem;
+	font-size: 1rem;
+}
+
+button {
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  background-color: transparent;
+  border: 0;
+  margin: auto;
 }
