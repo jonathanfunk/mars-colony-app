@@ -20,6 +20,7 @@ export class ReportComponent implements OnInit {
   reportForm: FormGroup;
   NO_ALIEN_SELECTED = '(none)';
 
+//This is a default method of the class that is called and ensures proper initialization.
 constructor(private router: Router,
   private alienService: AliensService,
   private encountersService: EncountersService,
@@ -33,6 +34,7 @@ constructor(private router: Router,
 
   }
 
+  //This is for initializing content after component is created
   ngOnInit() {
 
     //This is used to validate a form
@@ -42,6 +44,7 @@ constructor(private router: Router,
     });
   }
 
+  //This sets up YYYY-MM-DD date
   private getDate(){
     const date = new Date();
     return `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
@@ -49,11 +52,14 @@ constructor(private router: Router,
 
   onSubmit(event) {
     event.preventDefault();
+      const colonist = JSON.parse(localStorage.getItem("colonist"));
       const date = this.getDate();
       const atype = this.reportForm.get('atype').value;
       const action = this.reportForm.get('action').value;
-      const encounter = new NewEncounter(date, atype, action, '10' );
+      const encounter = new NewEncounter(date, atype, action, colonist.id );
       this.encountersService.submitEncounter(encounter).subscribe(() => {
+        console.log(encounter);
+        //console.log(localStorage.getItem("colonist"));
         this.router.navigate(['/encounters']);
       }, (err) => {
         console.log("NOT WORKING!");

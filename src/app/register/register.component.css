@@ -3,3 +3,13 @@
   height: 90vh;
   padding: 2rem;
 }
+
+.ng-valid input {
+	border-color: red;
+  color: white;
+}
+
+.ng-valid select {
+  border-color: red;
+  color: white;
+}

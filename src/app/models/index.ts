@@ -29,7 +29,7 @@ export interface Job {//Linked to Colonist Class
 export class NewColonist {//
   constructor(
     public name: string,
-    public age: number,
+    public age: string,
     public job_id: string
   ){}
 }

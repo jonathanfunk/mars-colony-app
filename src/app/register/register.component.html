@@ -4,8 +4,8 @@
 <section class="register">
   <form [formGroup]="registerForm" class="register-form" (ngSubmit)="onSubmit($event)">
     <fieldset>
-      <label><input type="text" placeholder="Enter name" formControlName="name" /></label>
-      <label><input type="number" placeholder="Age" formControlName="age" /></label>
+      <input type="text" placeholder="Enter name" formControlName="name" />
+      <input type="number" placeholder="Age" formControlName="age" />
       <select formControlName="job_id">
         <option [value]="NO_JOB_SELECTED">Select a Job</option>
         <option *ngFor="let job of marsJobs" [value]="job.id">{{job.name}}</option>
