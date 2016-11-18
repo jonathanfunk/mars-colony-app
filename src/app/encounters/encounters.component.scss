@@ -9,10 +9,9 @@ header {
   padding: 1rem;
   background-color: white;
   overflow: scroll;
-}
-
-li {
-  margin-bottom: 1rem;
+  li {
+    margin-bottom: 1rem;
+  }
 }
 
 .report-link {
@@ -20,9 +19,8 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-a {
-  color: white;
-  text-decoration: none;
+  a {
+    color: white;
+    text-decoration: none;
+  }
 }

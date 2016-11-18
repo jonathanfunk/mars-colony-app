@@ -65,6 +65,7 @@ h1, h2 {
 header {
 	height: 10vh;
 	text-align: center;
+	padding: 1rem;
 }
 
 /* Forms */

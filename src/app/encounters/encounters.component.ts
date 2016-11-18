@@ -13,7 +13,7 @@ import  EncountersService from '../services/encounter.service';//This calls from
 @Component({
   selector: 'app-encounters',
   templateUrl: './encounters.component.html',
-  styleUrls: ['./encounters.component.css'],
+  styleUrls: ['./encounters.component.scss'],
   providers: [EncountersService], //This injects from service to be used below
   animations: [
       trigger('routeAnimation', [
