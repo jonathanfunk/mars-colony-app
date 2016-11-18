@@ -1,25 +1,32 @@
 //Making model classes is 1st step
 
-export class Encounter {//Found in encounters component
+//Interface is description of object and they end in semi-colons and have no constructors
+
+export class NewEncounter {
   constructor(
-    public id: number,
     public date: string,
-    public colonist_id: number,
     public atype: string,
-    public action: string
+    public action: string,
+    public colonist_id: string
   ){}
 }
 
-export class Job {//Linked to Colonist Class
-  constructor(
-    public name: string,
-    public id: number,
-    public description: string
-  ){}
+export interface Encounter {
+    id: number;
+    date: string;
+    atype: string;
+    action: string;
+    colonist_id: number;
+}
+
+export interface Job {//Linked to Colonist Class
+    name: string;
+    id: number;
+    description: string;
 }
 
 
-export class NewColonist {
+export class NewColonist {//
   constructor(
     public name: string,
     public age: number,
@@ -27,18 +34,16 @@ export class NewColonist {
   ){}
 }
 
-interface Colonist {
+export interface Colonist {
   name: string;
   id: number;
   age: number;
   job: Job;
 }
 
-export class Alien {
-  constructor(
-    public type: string,
-    public submitted_by: number,
-    public id: number,
-    public description: string
-  ){}
+export interface Alien {
+  type: string;
+  submitted_by: number;
+  id: number;
+  description: string;
 }

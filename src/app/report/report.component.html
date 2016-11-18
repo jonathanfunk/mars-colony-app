@@ -5,9 +5,9 @@
 <section class="report">
   <form [formGroup]="reportForm" class="report-form" (ngSubmit)="onSubmit($event)">
     <fieldset>
-      <select formControlName="alien_id">
+      <select formControlName="atype">
         <option [value]="NO_ALIEN_SELECTED">Select alien type</option>
-        <option *ngFor="let alien of marsAliens" [value]="alien.id">{{alien.type}}</option>
+        <option *ngFor="let alien of marsAliens" [value]="alien.type">{{alien.type}}</option>
       </select>
       <textarea placeholder="Action taken" formControlName="action"></textarea>
     </fieldset>
