@@ -25,21 +25,24 @@ import { Router } from '@angular/router';
     trigger('routeAnimation', [
       state('*',
         style({
+          width: '100%',
           opacity: 1,
-          transform: 'translateX(0)'
+          transform: 'translateY(0)'
         })
       ),
-      transition(':enter', [
+      transition('void => *', [
         style({
-          opacity: 0,
-          transform: 'translateX(-100%)'
-        }),
-        animate('5s 5s ease-in')
-      ]),
-      transition(':leave', [
-        animate('5s ease-out', style({
+          width: '100%',
           opacity: 0,
           transform: 'translateY(-100%)'
+        }),
+        animate('1s ease-in')
+      ]),
+      transition('* => void', [
+        animate('1s ease-out', style({
+          width: '100%',
+          opacity: 0,
+          transform: 'translateY(100%)'
         }))
       ])
     ])
@@ -53,6 +56,10 @@ export class ReportComponent implements OnInit {
 
   @HostBinding('style.display') get display() {
     return 'block';
+  }
+
+  @HostBinding('style.position') get position() {
+    return 'absolute';
   }
 
   marsAliens: Alien[];

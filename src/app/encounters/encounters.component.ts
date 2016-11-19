@@ -16,28 +16,31 @@ import  EncountersService from '../services/encounter.service';//This calls from
   styleUrls: ['./encounters.component.scss'],
   providers: [EncountersService], //This injects from service to be used below
   animations: [
-      trigger('routeAnimation', [
-        state('*',
-          style({
-            opacity: 1,
-            transform: 'translateX(0)'
-          })
-        ),
-        transition(':enter', [
-          style({
-            opacity: 0,
-            transform: 'translateX(-100%)'
-          }),
-          animate('0.2s ease-in')
-        ]),
-        transition(':leave', [
-          animate('0.5s ease-out', style({
-            opacity: 0,
-            transform: 'translateY(100%)'
-          }))
-        ])
+    trigger('routeAnimation', [
+      state('*',
+        style({
+          width: '100%',
+          opacity: 1,
+          transform: 'translateY(0)'
+        })
+      ),
+      transition('void => *', [
+        style({
+          width: '100%',
+          opacity: 0,
+          transform: 'translateY(-100%)'
+        }),
+        animate('1s ease-in')
+      ]),
+      transition('* => void', [
+        animate('1s ease-out', style({
+          width: '100%',
+          opacity: 0,
+          transform: 'translateY(100%)'
+        }))
       ])
-    ]
+    ])
+  ]
 })
 export class EncountersComponent implements OnInit {
 
@@ -47,6 +50,10 @@ export class EncountersComponent implements OnInit {
 
   @HostBinding('style.display') get display() {
     return 'block';
+  }
+
+  @HostBinding('style.position') get position() {
+    return 'absolute';
   }
 
   marsEncounters: Encounter[];
