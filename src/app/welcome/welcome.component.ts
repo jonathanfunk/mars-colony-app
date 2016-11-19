@@ -15,28 +15,31 @@ import { Component,
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.scss'],
   animations: [
-      trigger('routeAnimation', [
-        state('*',
-          style({
-            opacity: 1,
-            transform: 'translateX(0)'
-          })
-        ),
-        transition(':enter', [
-          style({
-            opacity: 0,
-            transform: 'translateX(-100%)'
-          }),
-          animate('0.2s ease-in')
-        ]),
-        transition(':leave', [
-          animate('0.5s ease-out', style({
-            opacity: 0,
-            transform: 'translateY(100%)'
-          }))
-        ])
+    trigger('routeAnimation', [
+      state('*',
+        style({
+          width: '100%',
+          opacity: 1,
+          transform: 'scale(1)'
+        })
+      ),
+      transition('void => *', [
+        style({
+          width: '100%',
+          opacity: 0,
+          transform: 'scale(1)'
+        }),
+        animate('0.5s ease-in')
+      ]),
+      transition('* => void', [
+        animate('1s ease-out', style({
+          width: '100%',
+          opacity: 0,
+          transform: 'scale(0)'
+        }))
       ])
-    ]
+    ])
+  ]
 })
 
 
@@ -48,6 +51,10 @@ export class WelcomeComponent implements OnInit {
 
   @HostBinding('style.display') get display() {
     return 'block';
+  }
+
+  @HostBinding('style.position') get position() {
+    return 'absolute';
   }
 
   constructor() { }
