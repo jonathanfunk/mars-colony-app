@@ -20,22 +20,22 @@ import { Component,
         style({
           width: '100%',
           opacity: 1,
-          transform: 'scale(1)'
+          transform: 'translateY(0)'
         })
       ),
       transition('void => *', [
         style({
           width: '100%',
           opacity: 0,
-          transform: 'scale(1)'
+          transform: 'translateY(0)'
         }),
-        animate('0.5s ease-in')
+        animate('1s ease-in')
       ]),
       transition('* => void', [
         animate('1s ease-out', style({
           width: '100%',
           opacity: 0,
-          transform: 'scale(0)'
+          transform: 'translateY(100%)'
         }))
       ])
     ])
