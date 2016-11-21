@@ -26,7 +26,7 @@ export interface Job {//Linked to Colonist Class
 }
 
 
-export class NewColonist {//
+export class NewColonist {
   constructor(
     public name: string,
     public age: string,

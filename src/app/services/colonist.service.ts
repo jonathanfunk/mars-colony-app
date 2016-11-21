@@ -16,6 +16,7 @@ export default class ColonistsService {
                     .map((res: Response) => res.json().colonist);
   }
 
+  //This will submit a new class
   submitColonist(colonist: NewColonist): Observable<Colonist> {
 
     const headers = new Headers();

@@ -99,12 +99,11 @@ export class RegisterComponent implements OnInit {
       const age = this.registerForm.get('age').value.toString();
       const job_id = this.registerForm.get('job_id').value;
       const colonist = new NewColonist(name, age, job_id);
-      //console.log('Ok, let\'s register this new colonist:', new NewColonist(name, age, job_id));
       this.colonistsService.submitColonist(colonist).subscribe((colonist) => {
-        localStorage.setItem("colonist", JSON.stringify(colonist));
+        localStorage.setItem("colonist", JSON.stringify(colonist));//This will store the new class in local storage
         this.router.navigate(['/encounters']);
       }, (err) => {
-        console.log("NOT WORKING!");
+        console.log("Not working!");
       });
     }
   }

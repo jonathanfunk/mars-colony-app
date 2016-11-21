@@ -59,7 +59,7 @@ export class EncountersComponent implements OnInit {
   marsEncounters: Encounter[];
 
   constructor(encounterService : EncountersService) {
-    encounterService.getEncounters().subscribe((encounters) => {//Subscribe is an asyncronous method. Loop is done in service.
+    encounterService.getEncounters().subscribe((encounters) => {
       this.marsEncounters = encounters;
     }, (err) => {
       console.log(err);

@@ -16,6 +16,7 @@ export default class EncountersService {
                     .map((res: Response) => res.json().encounters);
   }
 
+  //This will submit a new class
   submitEncounter(encounter: NewEncounter): Observable<Encounter> {
 
     const headers = new Headers();
