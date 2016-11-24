@@ -1,0 +1,9 @@
+<header>
+  <h1>Commander’s Log</h1>
+</header>
+<section class="blog">
+  <article *ngFor="let blog of marsBlog">
+    <h2>{{blog.title.rendered}}</h2>
+    <div innerHTML = "{{blog.content.rendered}}"></div>
+  </article>
+</section>

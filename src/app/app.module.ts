@@ -10,6 +10,7 @@ import { EncountersComponent } from './encounters/encounters.component';
 import { ReportComponent } from './report/report.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { BlogComponent } from './blog/blog.component';
 
 //Step 2: After components are created, make appRoutes here.
 //Paste <router-outlet></router-outlet> in app.component.html.
@@ -19,6 +20,7 @@ const appRoutes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'encounters', component: EncountersComponent },
   { path: 'report', component: ReportComponent },
+  { path: 'blog', component: BlogComponent },
   { path: '**', component: NotFoundComponent }
 ];
 
@@ -29,7 +31,8 @@ const appRoutes: Routes = [
     RegisterComponent,
     EncountersComponent,
     ReportComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,

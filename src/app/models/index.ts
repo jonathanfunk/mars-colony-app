@@ -47,3 +47,27 @@ export interface Alien {
   id: number;
   description: string;
 }
+
+export interface Blog {
+  id: number;
+  date: string;
+  date_gmt: string;
+  guid: {};
+  modified: string;
+  modified_gmt: string;
+  slug: string;
+  type: string;
+  link: string;
+  title: {};
+  content: {};
+  excerpt: {};
+  author: number;
+  featured_media: number;
+  comment_status: string;
+  ping_status: string;
+  sticky: boolean;
+  format: string;
+  categories: {};
+  tags: {};
+  [_links: number]: {}
+}
