@@ -17,10 +17,14 @@ header {
 .report-link {
   height: 20vh;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
+  text-align: center;
   a {
     color: white;
     text-decoration: none;
+  }
+  h2 {
+    width: 100%;
   }
 }

@@ -1,11 +1,21 @@
 .blog {
+  height: 80vh;
   width: 800px;
   margin: 0 auto;
   padding: 0 2rem 2rem 2rem;
+  overflow: auto;
 }
 article {
   margin-bottom: 2rem;
   h2 {
     margin-bottom: 1rem;
+  }
+}
+.back-link {
+  height: 10vh;
+  text-align: center;
+  a {
+    color: white;
+    text-decoration: none;
   }
 }
