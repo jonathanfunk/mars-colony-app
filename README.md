@@ -1,5 +1,6 @@
 Mars Colony App
 ======
+![mars-colony-browser-mockup](https://cloud.githubusercontent.com/assets/20465505/20636026/9985d762-b31a-11e6-8a3a-d3b66a6e7643.jpg)
 
 ## Project
 This is a web-based application for Earth colonists exploring Mars. The objective for this project is to build a single paged application using Angular 2.
